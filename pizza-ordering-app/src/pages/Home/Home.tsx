@@ -1,15 +1,10 @@
-import React from 'react'
-import styled from 'styled-components';
-
-const HomeWrapper = styled.div`
-
-`;
+import React from 'react';
 
 const Home: React.FC = () => {
     return (
-        <HomeWrapper>
+        <main>
             Home page
-        </HomeWrapper>
+        </main>
     )
 }
 

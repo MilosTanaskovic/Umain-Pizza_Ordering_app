@@ -1,15 +1,10 @@
-import React from 'react'
-import styled from 'styled-components';
-
-const OrderWrapper = styled.div`
-
-`;
+import React from 'react';
 
 const Order: React.FC = () => {
     return (
-        <OrderWrapper>
+        <main>
             Order Page
-        </OrderWrapper>
+        </main>
     )
 }
 

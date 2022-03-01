@@ -1,15 +1,23 @@
-import React from 'react'
-import styled from 'styled-components';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const NavBarWrapper = styled.nav`
-
-`;
+import './NavBar.css';
 
 const NavBar: React.FC = () => {
     return (
-        <NavBarWrapper>
-           Nav Links
-        </NavBarWrapper>
+        <div className='nav'>
+           <nav className='nav-wrapper'>
+               <li>
+                    <Link to='/'>Home</Link>
+               </li>
+               <li>
+                    <Link to='/checkout'>Checkout</Link>
+               </li>
+               <li>
+                    <Link to='/order'>Order</Link>
+               </li>
+           </nav>
+        </div>
     )
 }
 

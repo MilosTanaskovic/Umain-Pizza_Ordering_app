@@ -1,15 +1,10 @@
-import React from 'react'
-import styled from 'styled-components';
-
-const CheckoutWrapper = styled.div`
-
-`;
+import React from 'react';
 
 const Checkout: React.FC = () => {
     return (
-        <CheckoutWrapper>
+        <main>
             Checkout page
-        </CheckoutWrapper>
+        </main>
     )
 }
 
