@@ -1,5 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import NavBar from './components/NavBar/NavBar';
+import Checkout from './pages/Checkout/Checkout';
+import Home from './pages/Home/Home';
+import Order from './pages/Order/Order';
 
 const AppWrapper = styled.div`
   margin: 0;
@@ -15,7 +19,13 @@ const AppWrapper = styled.div`
 const App: React.FC = () => {
   return (
     <AppWrapper>
-      Home Page
+      <NavBar />
+
+      {/* pages */}
+      <Home />
+      <Checkout />
+      <Order />
+      
     </AppWrapper>
   )
 }
