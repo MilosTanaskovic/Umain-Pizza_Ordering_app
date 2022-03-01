@@ -1,9 +1,21 @@
 import React from 'react';
+import Restaurant from '../../components/Restaurant/Restaurant';
+import { RestaurantType } from '../../models/restaurant';
 
-const Home: React.FC = () => {
+interface Props {
+    restaurants: RestaurantType[];
+}
+
+const Home: React.FC<Props> = ({restaurants}: Props) => {
     return (
         <main>
-            Home page
+            <h1>Pizza Ordering App</h1>
+            {restaurants?.map(restaurant => (
+                <Restaurant 
+                    key={restaurant.id}
+                    restaurant={restaurant}
+                />
+            ))}
         </main>
     )
 }
