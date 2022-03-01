@@ -1,4 +1,4 @@
-.nav-wrapper {
+.nav__wrapper {
     display: flex;
     justify-content: end;
 
@@ -8,13 +8,13 @@
     overflow: hidden;
     background-color: #333;
 }
-.nav-wrapper li a {
+.nav__wrapper li a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
-.nav-wrapper li a:hover{
+.nav__wrapper li a:hover{
     background-color: #111;
 }

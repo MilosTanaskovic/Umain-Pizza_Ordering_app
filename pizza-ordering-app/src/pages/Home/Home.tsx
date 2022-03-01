@@ -1,5 +1,5 @@
 import React from 'react';
-import Restaurant from '../../components/Restaurant/Restaurant';
+import Cart from '../../components/Cart/Cart';
 import { RestaurantType } from '../../models/restaurant';
 
 interface Props {
@@ -11,7 +11,7 @@ const Home: React.FC<Props> = ({restaurants}: Props) => {
         <main>
             <h1>Pizza Ordering App</h1>
             {restaurants?.map(restaurant => (
-                <Restaurant 
+                <Cart 
                     key={restaurant.id}
                     restaurant={restaurant}
                 />

@@ -6,7 +6,7 @@ import './NavBar.css';
 const NavBar: React.FC = () => {
     return (
         <div className='nav'>
-           <nav className='nav-wrapper'>
+           <nav className='nav__wrapper'>
                <li>
                     <Link to='/'>Home</Link>
                </li>
