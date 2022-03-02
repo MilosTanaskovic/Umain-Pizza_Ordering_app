@@ -14,4 +14,5 @@ export interface MenuType {
     topping: string[];
     price: number;
     rank: number;
+    qty: number;
 }

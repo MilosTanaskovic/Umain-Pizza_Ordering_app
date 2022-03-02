@@ -6,9 +6,10 @@ import { RestaurantType } from '../../models/restaurant';
 
 interface Props {
     restaurants: RestaurantType[];
+    addToCart?: any;
 }
 
-const Home: React.FC<Props> = ({restaurants}: Props) => {
+const Home: React.FC<Props> = ({restaurants, addToCart}: Props) => {
     const location = useGeoLocation();
     console.log(location.coordinates);
     return (
@@ -18,6 +19,7 @@ const Home: React.FC<Props> = ({restaurants}: Props) => {
                 <Cart 
                     key={restaurant.id}
                     restaurant={restaurant}
+                    addToCart={addToCart}
                 />
             ))}
             <GeoLocation location={location} />

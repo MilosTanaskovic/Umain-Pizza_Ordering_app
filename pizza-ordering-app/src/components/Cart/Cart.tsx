@@ -4,11 +4,12 @@ import { MenuType, RestaurantType } from '../../models/restaurant';
 import './Cart.css';
 
 interface Props {
-    restaurant?: RestaurantType | any;
-    item?: MenuType[] | any; 
+    restaurant?: RestaurantType;
+    item?: MenuType;
+    addToCart: (menuItem: MenuType) => void;
 }
 
-const Restaurant: React.FC<Props> = ({restaurant, item}: Props)  => {
+const Restaurant: React.FC<Props> = ({restaurant, item, addToCart}: Props)  => {
     let history = useHistory();
 
     const handleViewMenu = () => {
@@ -39,12 +40,10 @@ const Restaurant: React.FC<Props> = ({restaurant, item}: Props)  => {
                                     <li>{ingredient}</li>      
                             ))}
                         </ul>
-                        <button className='card__button'>Add to order</button>
+                        <button className='card__button' onClick={() => addToCart(item)}>Add to order</button>
                     </>
                 )
             }
-            
-
         </div>
     )
 }
