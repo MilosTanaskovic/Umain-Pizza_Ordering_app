@@ -16,7 +16,7 @@ const App: React.FC = () => {
   const [restaurants, setRestaurants] = useState<RestaurantType[]>([]);
   const [menu, setMenu] = useState<MenuType[]>([]);
 
-  const [cartItems, setCartItems] = useState<MenuType[]>([]);
+  const [cartItems, setCartItems] = useState<MenuType[] | any>([]);
   let history = useHistory(); 
   useEffect(() => {
     // get list of restaurants
@@ -31,21 +31,23 @@ const App: React.FC = () => {
   
   // handle add to cart
   const handleAddToCart  = (menuItem: MenuType) => {
-    const exist = cartItems.find(x => x.id === menuItem.id);
-    console.log(exist);
+    const exist = cartItems.find((x: any) => x.id === menuItem.id);
     if(exist) {
-      setCartItems(cartItems.map((x) => x.id === menuItem.id ? {...exist, qty: exist.qty + 1} : x));
-      console.log('dd')
+      setCartItems(cartItems.map((x: any) => x.id === menuItem.id ? {...exist, qty: exist.qty + 1} : x));
     } else {
       setCartItems([...cartItems, { ...menuItem, qty: 1 }]);
-      console.log('ddd')
       history.push('/cart');
     }
   }
   console.log(cartItems);
   // handle remove from cart
   const handleRemoveItem = (menuItem: MenuType) => {
-
+    const exist = cartItems.find((x: any) => x.id === menuItem.id);
+    if(exist?.qty === 1) {
+      setCartItems(cartItems.filter((x: any) => x.id !== menuItem.id));
+    } else {
+      setCartItems(cartItems.map((x: any) => x.id === menuItem.id ? { ...exist, qty: exist.qty - 1 } : x))
+    };
   }
 
   return (
