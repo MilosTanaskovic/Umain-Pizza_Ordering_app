@@ -7,19 +7,25 @@ import Order from './pages/Order/Order';
 
 import './App.css';
 import { Route } from 'react-router';
-import { RestaurantType } from './models/restaurant';
+import { MenuType, RestaurantType } from './models/restaurant';
 import agent from './api/agent';
+import Menu from './pages/Menu/Menu';
 
 const App: React.FC = () => {
   const [restaurants, setRestaurants] = useState<RestaurantType[]>([]);
+  const [menu, setMenu] = useState<MenuType[]>([]);
 
   useEffect(() => {
+    // get list of restaurants
     agent.Restaurants.list().then((response) => {
-      console.log(response);
       setRestaurants(response);
     });
+    // get menu
+    agent.Restaurants.menu().then((response) => {
+      setMenu(response);
+    })
   }, []);
-  
+  console.log(menu);
   return (
     <div className='App'>
       <NavBar />
@@ -27,6 +33,9 @@ const App: React.FC = () => {
       {/* pages */}
         <Route exact path='/'>
           <Home restaurants={restaurants} />
+        </Route>
+        <Route path='/menu'>
+          <Menu menu={menu} />
         </Route>
         <Route path='/checkout' component={Checkout} />
         <Route path='/order' component={Order} />

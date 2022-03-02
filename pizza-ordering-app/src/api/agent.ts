@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import { RestaurantType } from '../models/restaurant';
+import { MenuType, RestaurantType } from '../models/restaurant';
 
 // base url
 axios.defaults.baseURL = 'https://private-anon-3297cfaf2d-pizzaapp.apiary-mock.com';
@@ -12,7 +12,7 @@ const requests = {
 
 const Restaurants = {
     list: () => requests.get<RestaurantType[]>('/restaurants/'),
-    menu: () => requests.get('/restaurants/restaurantId/menu?category=Pizza&orderBy=rank'),
+    menu: () => requests.get<MenuType[]>('/restaurants/restaurantId/menu?category=Pizza&orderBy=rank'),
 };
 
 const agent = {
