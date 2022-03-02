@@ -7,16 +7,17 @@ import Order from './pages/Order/Order';
 
 import './App.css';
 import { Route } from 'react-router';
-import axios from 'axios';
 import { RestaurantType } from './models/restaurant';
+import agent from './api/agent';
 
 const App: React.FC = () => {
   const [restaurants, setRestaurants] = useState<RestaurantType[]>([]);
 
   useEffect(() => {
-    axios.get<RestaurantType[]>('https://private-anon-108760f9fb-pizzaapp.apiary-mock.com/restaurants/').then((response) => {
-      setRestaurants(response.data);
-    })
+    agent.Restaurants.list().then((response) => {
+      console.log(response);
+      setRestaurants(response);
+    });
   }, []);
   
   return (
