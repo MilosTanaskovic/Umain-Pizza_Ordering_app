@@ -1,5 +1,7 @@
 import React from 'react';
 import Cart from '../../components/Cart/Cart';
+import GeoLocation from '../../components/GeoLocation/GeoLocation';
+import useGeoLocation from '../../hooks/useGeoLocation';
 import { RestaurantType } from '../../models/restaurant';
 
 interface Props {
@@ -7,6 +9,8 @@ interface Props {
 }
 
 const Home: React.FC<Props> = ({restaurants}: Props) => {
+    const location = useGeoLocation();
+    console.log(location.coordinates);
     return (
         <main>
             <h1>Pizza Ordering App</h1>
@@ -16,6 +20,7 @@ const Home: React.FC<Props> = ({restaurants}: Props) => {
                     restaurant={restaurant}
                 />
             ))}
+            <GeoLocation location={location} />
         </main>
     )
 }
