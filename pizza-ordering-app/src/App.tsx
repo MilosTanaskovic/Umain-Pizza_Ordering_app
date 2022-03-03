@@ -15,8 +15,9 @@ import agent from './api/agent';
 const App: React.FC = () => {
   const [restaurants, setRestaurants] = useState<RestaurantType[]>([]);
   const [menu, setMenu] = useState<MenuType[]>([]);
-
   const [cartItems, setCartItems] = useState<MenuType[] | any>([]);
+  const [orderPrice, setOrderPrice] = useState<number>(0);
+
   let history = useHistory(); 
   useEffect(() => {
     // get list of restaurants
@@ -41,7 +42,7 @@ const App: React.FC = () => {
   }
   console.log(cartItems);
   // handle remove from cart
-  const handleRemoveItem = (menuItem: MenuType) => {
+  const handleDecreaseQty = (menuItem: MenuType) => {
     const exist = cartItems.find((x: any) => x.id === menuItem.id);
     if(exist?.qty === 1) {
       setCartItems(cartItems.filter((x: any) => x.id !== menuItem.id));
@@ -49,10 +50,17 @@ const App: React.FC = () => {
       setCartItems(cartItems.map((x: any) => x.id === menuItem.id ? { ...exist, qty: exist.qty - 1 } : x))
     };
   }
-
+  // handle remove all qty from item
+  const handleRemoveItem = (menuItem: MenuType) => {
+    setCartItems(cartItems.filter((x: any) => x.id !== menuItem.id ))
+  }
+  console.log(cartItems)
   return (
     <div className='App'>
-      <NavBar />
+      <NavBar 
+        countCartItems={cartItems.length}
+        orderPrice={orderPrice}
+      />
 
       {/* pages */}
         <Route exact path='/'>
@@ -68,6 +76,9 @@ const App: React.FC = () => {
           <ShoppingCart
             cartItems={cartItems}
             addToCart={handleAddToCart}
+            decreaseQty={handleDecreaseQty}
+            setOrderPrice={setOrderPrice}
+            orderPrice={orderPrice}
             removeItem={handleRemoveItem}
           />
         </Route>
