@@ -1,0 +1,10 @@
+.logo {
+    width: fit-content;
+    height: fit-content;
+    position: fixed;
+    margin: auto;
+    color: white;
+    
+    left: 20px;
+    top: 3px;
+}

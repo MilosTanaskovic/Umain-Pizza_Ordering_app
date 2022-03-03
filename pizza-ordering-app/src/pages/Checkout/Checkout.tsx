@@ -2,7 +2,7 @@ import React from 'react';
 
 const Checkout: React.FC = () => {
     return (
-        <main>
+        <main className='main'>
             Checkout page
         </main>
     )

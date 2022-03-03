@@ -85,7 +85,12 @@ const App: React.FC = () => {
         <Route path='/checkout'>
           <Checkout />
         </Route>
-        <Route path='/order' component={Order} />
+        <Route path='/order'>
+          <Order 
+            cartItems={cartItems}
+            removeItem={handleRemoveItem}
+          />
+        </Route>
     </div>
   )
 }

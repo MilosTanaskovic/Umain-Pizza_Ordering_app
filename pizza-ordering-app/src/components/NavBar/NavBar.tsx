@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
 import './NavBar.css';
+import Logo from '../Logo/Logo';
 
 interface Props {
     countCartItems: number;
@@ -11,7 +12,8 @@ interface Props {
 
 const NavBar: React.FC<Props> = ({countCartItems, orderPrice}: Props) => {
     return (
-        <div className='nav'>
+        <header className='nav'>
+            <Logo />
            <nav className='nav__wrapper'>
                <li>
                     <Link to='/'>Home</Link>
@@ -24,20 +26,24 @@ const NavBar: React.FC<Props> = ({countCartItems, orderPrice}: Props) => {
                     
                </li>
                <li>
-                   {
-                       countCartItems ? (
-                           <span>{countCartItems}</span>
-                       ) : (
-                           '0'
-                       )
-                   }
-                    <FontAwesomeIcon className='fa-cart' icon={faCartArrowDown} />
-                   { orderPrice && (
-                       <span>{orderPrice.toFixed(2)}kr</span>
+                   <div className='nav__wrapper-cart'>
+                    {
+                        countCartItems ? (
+                                <span  className='nav__wrapper-qty'>{countCartItems}</span>
+                        ) : (
+                                <span className='nav__wrapper-qty'>0</span>
+                        )
+                    }
+                        <FontAwesomeIcon className='fa-cart' icon={faCartArrowDown} />
+                    </div>
+                   { orderPrice ? (
+                       <span className='nav__wrapper-price'>{orderPrice.toFixed(2)}kr</span>
+                   ): (
+                       <span className='nav__wrapper-price'>0kr</span>
                    )}
                </li>
            </nav>
-        </div>
+        </header>
     )
 }
 

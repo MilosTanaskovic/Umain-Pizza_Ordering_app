@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { MenuType } from '../../models/restaurant';
 
 interface Props {
@@ -25,7 +26,7 @@ const ShoppingCart: React.FC<Props> = ({
     setOrderPrice(orderPriceOrigin);
     
     return (
-        <main className='shopping-cart'>
+        <main className='main shopping-cart'>
             <h2>Your Cart</h2>
             <div>{cartItems.length === 0 && <p>Your cart is empty. Add some pizzas 🍕🍕🍕 </p>}</div>
             {
@@ -51,7 +52,7 @@ const ShoppingCart: React.FC<Props> = ({
                         <p>Order: {orderPrice.toFixed(2)}kr</p>
                         <p>Delivery(free over 200kr.): {deliveryPrice.toFixed(2)}kr</p>
                         <p>Total: {totalPrice.toFixed(2)}kr</p>
-                        <button>Checkout</button>
+                        <Link to='/order'>Checkout</Link>
                     </div>
                     </>
                 )

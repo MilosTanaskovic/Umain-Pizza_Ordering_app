@@ -9,7 +9,7 @@ interface Props {
 
 const Menu: React.FC<Props> = ({menu, addToCart}: Props) => {
     return (
-        <div>
+        <main className='main'>
             {
                 menu?.map((item) => (
                     <Cart 
@@ -19,7 +19,7 @@ const Menu: React.FC<Props> = ({menu, addToCart}: Props) => {
                     />
                 ))
             }
-        </div>
+        </main>
     )
 }
 export default Menu;

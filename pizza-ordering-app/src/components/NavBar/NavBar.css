@@ -1,3 +1,8 @@
+.nav {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+}
 .nav__wrapper {
     display: flex;
     justify-content: end;
@@ -5,7 +10,7 @@
 
     list-style-type: none;
     margin: 0;
-    padding: 0 10px;
+    padding: 0 20px;
     overflow: hidden;
     background-color: #333;
 
@@ -20,7 +25,22 @@
 .nav__wrapper li a:hover{
     background-color: #111;
 }
+.nav__wrapper li:last-child{
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
 .fa-cart {
     color: cornflowerblue;
     font-size: 20px;
+}
+.nav__wrapper-cart {
+    display: flex;
+    flex-direction: column;
+}
+.nav__wrapper-qty {
+    color: tomato;
+}
+.nav__wrapper-price{
+    color: white;
 }

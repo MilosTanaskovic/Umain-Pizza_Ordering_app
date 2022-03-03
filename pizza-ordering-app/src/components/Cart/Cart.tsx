@@ -15,12 +15,13 @@ const Restaurant: React.FC<Props> = ({restaurant, item, addToCart}: Props)  => {
     const handleViewMenu = () => {
         history.push('/menu');
     }
-
+    console.log(restaurant);
     return (
         <div className='card'>
             {
                 restaurant && (
                     <>
+                        <img className='card__img' src="/w3images/jeans3.jpg" alt="" />
                         <h2>{restaurant.name}</h2>
                         <p className='card__address'>{restaurant.address1}</p>
                         <p>{restaurant.address2}</p>
