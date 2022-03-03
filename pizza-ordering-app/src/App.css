@@ -14,3 +14,16 @@ body {
 .main {
   margin-top: 80px;
 }
+.main__title {
+  color: #ff7575;
+  text-align: center;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+  font-family: Bangers,cursive;
+  font-size: 3.5em;
+}
+.main__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}

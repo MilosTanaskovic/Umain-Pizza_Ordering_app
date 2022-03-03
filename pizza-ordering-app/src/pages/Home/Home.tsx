@@ -13,15 +13,17 @@ const Home: React.FC<Props> = ({restaurants, addToCart}: Props) => {
     const location = useGeoLocation();
     console.log(location.coordinates);
     return (
-        <main className='main'>
-            <h1>Pizza Ordering App</h1>
-            {restaurants?.map(restaurant => (
-                <Cart 
-                    key={restaurant.id}
-                    restaurant={restaurant}
-                    addToCart={addToCart}
-                />
-            ))}
+        <main className='main home'>
+            <h1 className='main__title'>Pizza Selection</h1>
+            <div className='main__grid '>
+                {restaurants?.map(restaurant => (
+                    <Cart 
+                        key={restaurant.id}
+                        restaurant={restaurant}
+                        addToCart={addToCart}
+                    />
+                ))}
+            </div>
             <GeoLocation location={location} />
         </main>
     )

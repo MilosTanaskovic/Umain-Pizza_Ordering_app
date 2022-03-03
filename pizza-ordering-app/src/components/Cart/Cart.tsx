@@ -21,7 +21,7 @@ const Restaurant: React.FC<Props> = ({restaurant, item, addToCart}: Props)  => {
             {
                 restaurant && (
                     <>
-                        <img className='card__img' src="/w3images/jeans3.jpg" alt="" />
+                        <img className='card__img' src={`/assets/restaurant/${restaurant.id}.jpeg`} alt={restaurant.name} />
                         <h2>{restaurant.name}</h2>
                         <p className='card__address'>{restaurant.address1}</p>
                         <p>{restaurant.address2}</p>
