@@ -32,11 +32,14 @@ const Restaurant: React.FC<Props> = ({restaurant, item, addToCart}: Props)  => {
             {
                 item && (
                     <>
+                        <div className='card__box'>
+                            <img className='card__img' src={`/assets/pizza/${item.id}.jpeg`} alt={item.name} />
+                            <p className='card__box-category'>{item.category}</p>
+                            <span className='card__box-rank'>#{item.rank}</span>
+                        </div>
                         <h2>{item.name}</h2>
                         <p className='card__address'>{item.price}kr</p>
-                        <p>{item.category}</p>
-                        <span>{item.rank}</span>
-                        <ul>
+                        <ul className='card__ingredient'>
                             {item?.topping?.map((ingredient: string) => (
                                     <li>{ingredient}</li>      
                             ))}

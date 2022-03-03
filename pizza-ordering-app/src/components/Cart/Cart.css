@@ -10,7 +10,7 @@
     outline: 0;
     padding: 12px;
     color: white;
-    background-color: #000;
+    background-color: #333;
     text-align: center;
     cursor: pointer;
     width: 100%;
@@ -27,3 +27,52 @@
 .card__img {
     width:100%
 }
+/* menu */
+.card__ingredient {
+    display: flex;
+    padding: 0 10px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5px;
+
+    list-style: none;
+    min-height: 60px
+}
+
+.card__ingredient li::before {
+    content: " ✅ ";
+    display: inline-block;
+    margin-right: 0.2rem;
+}
+
+.card__ingredient li{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.card__box{
+    position: relative;
+}
+.card__box-category{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 30px;
+    color: silver;
+    margin: auto;
+}
+
+.card__box-rank {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+
+    font-size: 20px;
+    color: #ff7575;
+}
+
+

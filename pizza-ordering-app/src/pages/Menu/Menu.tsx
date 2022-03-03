@@ -1,6 +1,7 @@
 import React from 'react'
 import { MenuType } from '../../models/restaurant';
 import Cart from '../../components/Cart/Cart';
+import './Menu.css';
 
 interface Props {
     menu: MenuType[];
@@ -10,6 +11,8 @@ interface Props {
 const Menu: React.FC<Props> = ({menu, addToCart}: Props) => {
     return (
         <main className='main'>
+            <h1 className='main__title'>Pizza Selection</h1>
+            <div className='main__grid'>
             {
                 menu?.map((item) => (
                     <Cart 
@@ -19,6 +22,7 @@ const Menu: React.FC<Props> = ({menu, addToCart}: Props) => {
                     />
                 ))
             }
+            </div>
         </main>
     )
 }
