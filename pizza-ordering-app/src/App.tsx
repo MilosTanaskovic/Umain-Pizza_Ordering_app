@@ -17,8 +17,8 @@ const App: React.FC = () => {
   const [menu, setMenu] = useState<MenuType[]>([]);
   const [cartItems, setCartItems] = useState<MenuType[] | any>([]);
   const [orderPrice, setOrderPrice] = useState<number>(0);
+  console.log(orderPrice);
 
-  let history = useHistory(); 
   useEffect(() => {
     // get list of restaurants
     agent.Restaurants.list().then((response) => {
@@ -37,7 +37,6 @@ const App: React.FC = () => {
       setCartItems(cartItems.map((x: any) => x.id === menuItem.id ? {...exist, qty: exist.qty + 1} : x));
     } else {
       setCartItems([...cartItems, { ...menuItem, qty: 1 }]);
-      history.push('/cart');
     }
   }
   console.log(cartItems);
@@ -58,7 +57,7 @@ const App: React.FC = () => {
   return (
     <div className='App'>
       <NavBar 
-        countCartItems={cartItems.length}
+        cartItems={cartItems}
         orderPrice={orderPrice}
       />
 

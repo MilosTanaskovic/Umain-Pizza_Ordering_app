@@ -9,12 +9,14 @@
     display: flex;
     justify-content: end;
     align-items: center;
+    gap: 50px;
 
     list-style-type: none;
     margin: 0;
     padding: 0 20px;
     overflow: hidden;
     background-color: #333;
+    min-height: 48px;
 
 }
 .nav__wrapper li a {
@@ -45,4 +47,7 @@
 }
 .nav__wrapper-price{
     color: white;
+}
+.button-checkout {
+    text-decoration: none;
 }

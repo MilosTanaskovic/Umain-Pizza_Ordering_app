@@ -12,11 +12,6 @@ interface Props {
 
 const Restaurant: React.FC<Props> = ({restaurant, item, addToCart})  => {
     let history = useHistory();
-
-    const handleViewMenu = () => {
-        history.push('/menu');
-    }
-    console.log(restaurant);
     return (
         <div className='card'>
             {
@@ -26,7 +21,7 @@ const Restaurant: React.FC<Props> = ({restaurant, item, addToCart})  => {
                         <h2>{restaurant.name}</h2>
                         <p className='card__address'>{restaurant.address1}</p>
                         <p>{restaurant.address2}</p>
-                        <Button onClick={handleViewMenu}>View Menu</Button>
+                        <Button onClick={() => history.push('/menu')}>View Menu</Button>
                     </>
                 )
             }
