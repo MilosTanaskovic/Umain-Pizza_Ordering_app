@@ -6,6 +6,8 @@ import { faCirclePlus, faCircleMinus, faTrash } from '@fortawesome/free-solid-sv
 
 import './ShoppingCart.css';
 import '../main.css';
+import '../../components/Button/Button.css';
+import clsx from 'clsx';
 import Button from '../../components/Button/Button';
 
 interface Props {
@@ -62,20 +64,18 @@ const ShoppingCart: React.FC<Props> = ({
                     </div>               
                 ))
             }
-            </div>
+            {/* Total Price */}
             {
                 cartItems.length !== 0 && (
-                    <>
-                    <hr></hr>
                     <div className='shopping-cart__total'>
-                        <p>Order: {orderPrice.toFixed(2)}kr</p>
-                        <p>Delivery(free over 200kr.): {deliveryPrice.toFixed(2)}kr</p>
-                        <p>Total: {totalPrice.toFixed(2)}kr</p>
-                        <Link to='/order'>Checkout</Link>
+                        <p>Order: <strong>{orderPrice.toFixed(2)}kr</strong></p>
+                        <p>Delivery(free over 200kr.): <strong>{deliveryPrice.toFixed(2)}kr</strong></p>
+                        <p>Total: <strong>{totalPrice.toFixed(2)}kr</strong></p>
+                        <Link className={clsx('button', 'button-total')} to='/order'>Checkout</Link>
                     </div>
-                    </>
                 )
             }
+            </div>
         </main>
     )
 }

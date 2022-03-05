@@ -1,3 +1,8 @@
 .order__item-qty {
     text-align: end;
 }
+.button-order {
+    width: fit-content;
+    float: right;
+    border-radius: 4.5px;
+}

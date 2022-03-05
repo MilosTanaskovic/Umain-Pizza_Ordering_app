@@ -5,6 +5,8 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 import './Order.css';
 import '../main.css';
+import Button from '../../components/Button/Button';
+import { useHistory } from 'react-router';
 
 interface Props {
     cartItems: MenuType[];
@@ -12,6 +14,7 @@ interface Props {
 }
 
 const Order: React.FC<Props> = ({cartItems, removeItem}: Props) => {
+    let history = useHistory();
     return (
         <main className='main order'>
             <h1 className='main__title'>Your Order List</h1>
@@ -40,8 +43,12 @@ const Order: React.FC<Props> = ({cartItems, removeItem}: Props) => {
                     )               
                 })
             }
+            {
+                cartItems.length !== 0 
+                    ? <Button className='button-order' >Go to Payment</Button>
+                    : <Button className='button-order' onClick={() =>  history.push('/menu')} >Back to Menu</Button>
+            }
             </div>
-            <button>Go to Payment</button>
         </main>
     )
 }

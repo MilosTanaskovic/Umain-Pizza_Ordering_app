@@ -27,7 +27,6 @@ const Restaurant: React.FC<Props> = ({restaurant, item, addToCart})  => {
                         <p className='card__address'>{restaurant.address1}</p>
                         <p>{restaurant.address2}</p>
                         <Button onClick={handleViewMenu}>View Menu</Button>
-                        {/* <button className='card__button' onClick={handleViewMenu}>View Menu</button> */}
                     </>
                 )
             }
@@ -47,7 +46,6 @@ const Restaurant: React.FC<Props> = ({restaurant, item, addToCart})  => {
                             ))}
                         </ul>
                         <Button onClick={() => addToCart(item)}>Add to order</Button>
-                        {/* <button className='card__button' onClick={() => addToCart(item)}>Add to order</button> */}
                     </>
                 )
             }
