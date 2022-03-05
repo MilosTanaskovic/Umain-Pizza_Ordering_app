@@ -1,11 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { MenuType } from '../../models/restaurant';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlus, faCircleMinus, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 import './ShoppingCart.css';
 import '../main.css';
+import Button from '../../components/Button/Button';
 
 interface Props {
     addToCart: (menuItem: MenuType) => void;
@@ -23,17 +24,20 @@ const ShoppingCart: React.FC<Props> = ({
     cartItems, 
     setOrderPrice, 
     orderPrice 
-}: Props) => {
+}) => {
 
     const orderPriceOrigin: number = cartItems.reduce((acc, currentItem) => acc + currentItem.price * currentItem.qty, 0);
     const deliveryPrice: number = orderPrice > 200 ? 0 : 20;
     const totalPrice = orderPriceOrigin + deliveryPrice
     setOrderPrice(orderPriceOrigin);
+
+    let history = useHistory();
     
     return (
         <main className='main shopping-cart'>
             <h1 className='main__title'>Your Cart</h1>
             <div>{cartItems.length === 0 && <p>Your cart is empty. Add some pizzas 🍕🍕🍕 </p>}</div>
+            <Button className='button-shoppcart' onClick={() => history.push('/menu')}>Back to Menu</Button>
             <div className='checkout-box'>
             {
                 cartItems.map((cartItem) => ( 

@@ -9,8 +9,7 @@ interface Props {
     addToCart: (menuItem: MenuType) => void;
 }
 
-const Menu: React.FC<Props> = ({menu, addToCart}: Props) => {
-    console.log(menu);
+const Menu: React.FC<Props> = ({menu, addToCart}) => {
     return (
         <main className='main'>
             <h1 className='main__title'>Pizzas Selection</h1>

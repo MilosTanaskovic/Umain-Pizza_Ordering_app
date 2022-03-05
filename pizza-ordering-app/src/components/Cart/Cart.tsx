@@ -1,6 +1,7 @@
 import React from 'react'
 import { useHistory } from 'react-router';
 import { MenuType, RestaurantType } from '../../models/restaurant';
+import Button from '../Button/Button';
 import './Cart.css';
 
 interface Props {
@@ -9,7 +10,7 @@ interface Props {
     addToCart: (menuItem: MenuType) => void;
 }
 
-const Restaurant: React.FC<Props> = ({restaurant, item, addToCart}: Props)  => {
+const Restaurant: React.FC<Props> = ({restaurant, item, addToCart})  => {
     let history = useHistory();
 
     const handleViewMenu = () => {
@@ -25,7 +26,8 @@ const Restaurant: React.FC<Props> = ({restaurant, item, addToCart}: Props)  => {
                         <h2>{restaurant.name}</h2>
                         <p className='card__address'>{restaurant.address1}</p>
                         <p>{restaurant.address2}</p>
-                        <button className='card__button' onClick={handleViewMenu}>View Menu</button>
+                        <Button onClick={handleViewMenu}>View Menu</Button>
+                        {/* <button className='card__button' onClick={handleViewMenu}>View Menu</button> */}
                     </>
                 )
             }
@@ -44,7 +46,8 @@ const Restaurant: React.FC<Props> = ({restaurant, item, addToCart}: Props)  => {
                                     <li>{ingredient}</li>      
                             ))}
                         </ul>
-                        <button className='card__button' onClick={() => addToCart(item)}>Add to order</button>
+                        <Button onClick={() => addToCart(item)}>Add to order</Button>
+                        {/* <button className='card__button' onClick={() => addToCart(item)}>Add to order</button> */}
                     </>
                 )
             }

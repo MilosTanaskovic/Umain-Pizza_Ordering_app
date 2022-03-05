@@ -11,7 +11,7 @@ interface Props {
     addToCart?: any;
 }
 
-const Home: React.FC<Props> = ({restaurants, addToCart}: Props) => {
+const Home: React.FC<Props> = ({restaurants, addToCart}) => {
     const location = useGeoLocation();
     console.log(location.coordinates);
     return (
