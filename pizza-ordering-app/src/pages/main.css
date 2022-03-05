@@ -1,0 +1,126 @@
+.main {
+    margin-top: 80px;
+}
+.main__title {
+    color: #ff7575;
+    text-align: center;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+    font-family: Bangers,cursive;
+    font-size: 3.5em;
+}
+.main__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    height: 100%;
+}
+/* chopping cart and order page => checkout */
+.checkout-box {
+    width: auto;
+    margin-left: 14px;
+    margin-right: 14px;
+}
+.checkout-box__item {
+    position: relative;
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgb(34 36 38 / 12%), 0 2px 10px 0 rgb(34 36 38 / 15%);
+    margin: 14px 0;
+    padding: 14px 14px;
+    border-radius: 4.5px;
+    border: 1px solid rgba(34,36,38,.15);
+    font-size: 14px;
+}
+.checkout-box__item:last-child {
+    margin-top: 0;
+}
+.checkout-box__grid {
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+
+    flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+
+    align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+
+    padding: 0;
+    margin: -14px;
+
+    
+}
+.checkout-box__row {
+    position: relative;
+
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    
+    flex-direction: row;
+    -ms-flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    
+    justify-content: inherit;
+    -webkit-box-pack: inherit;
+    -ms-flex-pack: inherit;
+
+    
+    align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    
+    width: 100%!important;
+    padding: 14px;
+}
+.checkout-box__row-img {
+    width: 25% !important;
+}
+.checkout-box__row-img > img {
+    position: relative;
+    vertical-align: middle;
+    background-color: transparent;
+    border-style: none;
+
+    display: block;
+    max-width: 100%;
+}
+.checkout-box__row-state {
+    width: 75% !important;
+
+    font-size: 18px;
+}
+.checkout-box__row-state p {
+    padding: 0px 28px;
+}
+.checkout-box__row-font {
+    font-weight: 700;
+}
+.checkout-box__row-column{
+    position: relative;
+    vertical-align: top;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+    margin-top: 0;
+    margin-bottom: 0;
+
+    text-align: left;
+}
+
+/* icons */
+.fa-trash{
+    cursor: pointer;
+}

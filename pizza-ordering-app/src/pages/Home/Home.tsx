@@ -4,6 +4,7 @@ import GeoLocation from '../../components/GeoLocation/GeoLocation';
 import useGeoLocation from '../../hooks/useGeoLocation';
 import { RestaurantType } from '../../models/restaurant';
 import './Home.css';
+import '../main.css';
 
 interface Props {
     restaurants: RestaurantType[];

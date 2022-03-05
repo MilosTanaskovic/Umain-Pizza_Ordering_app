@@ -21,7 +21,7 @@ const Restaurant: React.FC<Props> = ({restaurant, item, addToCart}: Props)  => {
             {
                 restaurant && (
                     <>
-                        <img className='card__img' src={`/assets/restaurant/${restaurant.id}.jpeg`} alt={restaurant.name} />
+                        <img className='card__img' src={`/assets/restaurants/${restaurant.id}.jpeg`} alt={restaurant.name} />
                         <h2>{restaurant.name}</h2>
                         <p className='card__address'>{restaurant.address1}</p>
                         <p>{restaurant.address2}</p>
@@ -33,7 +33,7 @@ const Restaurant: React.FC<Props> = ({restaurant, item, addToCart}: Props)  => {
                 item && (
                     <>
                         <div className='card__box'>
-                            <img className='card__img' src={`/assets/pizza/${item.id}.jpeg`} alt={item.name} />
+                            <img className='card__img' src={`/assets/menu/${item.name}.jpeg`} alt={item.name} />
                             <p className='card__box-category'>{item.category}</p>
                             <span className='card__box-rank'>#{item.rank}</span>
                         </div>

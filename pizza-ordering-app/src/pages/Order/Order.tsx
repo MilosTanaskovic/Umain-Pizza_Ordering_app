@@ -1,5 +1,10 @@
 import React from 'react';
 import { MenuType } from '../../models/restaurant';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+
+import './Order.css';
+import '../main.css';
 
 interface Props {
     cartItems: MenuType[];
@@ -9,22 +14,33 @@ interface Props {
 const Order: React.FC<Props> = ({cartItems, removeItem}: Props) => {
     return (
         <main className='main order'>
-            <h2>Checkout</h2>
+            <h1 className='main__title'>Your Order List</h1>
             <div>{cartItems.length === 0 && <p>Your order list is empty. Add some pizzas 🍕🍕🍕 </p>}</div>
+            <div className='checkout-box'>
             {
                 cartItems.map((orderItem) => { 
                     const {name, price, qty} = orderItem;
                     return (
-                        <div className='shopping-cart__item'>
-                            <img src='' alt='' />
-                            <span>{qty}</span>
-                            <h3>{name}</h3>
-                            <span>{price * qty}kr</span>
-                            <button onClick={() => removeItem(orderItem)} className='remove-all'>x</button>
+                        <div className='checkout-box__item order__item'>
+                            <div className='checkout-box__grid'>
+                                <div className='checkout-box__row'>
+                                    <div className='checkout-box__row-img checkout-box__row-column'>
+                                        <img src={`/assets/menu/${orderItem.name}.jpeg`} alt={orderItem.name} />
+                                    </div>
+                                    <div className='checkout-box__row-state checkout-box__row-column'>
+                                        <p className='checkout-box__row-font'>{name}</p>
+                                        <p className='checkout-box__row-font'>{(price * qty).toFixed(2)}kr</p>
+                                        <p className='order__item-qty'>
+                                            <FontAwesomeIcon onClick={() => removeItem(orderItem)} className='fa-trash' icon={faTrash} />
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     )               
                 })
             }
+            </div>
             <button>Go to Payment</button>
         </main>
     )

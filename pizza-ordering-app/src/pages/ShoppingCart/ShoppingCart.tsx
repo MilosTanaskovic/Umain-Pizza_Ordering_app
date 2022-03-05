@@ -1,6 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { MenuType } from '../../models/restaurant';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCirclePlus, faCircleMinus, faTrash } from '@fortawesome/free-solid-svg-icons';
+
+import './ShoppingCart.css';
+import '../main.css';
 
 interface Props {
     addToCart: (menuItem: MenuType) => void;
@@ -27,23 +32,33 @@ const ShoppingCart: React.FC<Props> = ({
     
     return (
         <main className='main shopping-cart'>
-            <h2>Your Cart</h2>
+            <h1 className='main__title'>Your Cart</h1>
             <div>{cartItems.length === 0 && <p>Your cart is empty. Add some pizzas 🍕🍕🍕 </p>}</div>
+            <div className='checkout-box'>
             {
                 cartItems.map((cartItem) => ( 
-                    <div className='shopping-cart__item'>
-                        <p>{cartItem.name}</p>
-                        <div className="btn-group">
-                            <button onClick={() => addToCart(cartItem)} className='add'>+</button>
-                            <button onClick={() => decreaseQty(cartItem)} className='remove'>-</button>
+                    <div className='checkout-box__item shopping-cart__item'>
+                        <div className='checkout-box__grid'>
+                            <div className='checkout-box__row'>
+                                <div className='checkout-box__row-img checkout-box__row-column'>
+                                    <img src={`/assets/menu/${cartItem.name}.jpeg`} alt={cartItem.name} />
+                                </div>
+                                <div className='checkout-box__row-state checkout-box__row-column'>
+                                    <p className='checkout-box__row-font'>{cartItem.name}</p>
+                                    <p className='checkout-box__row-font'>{cartItem.price.toFixed(2)}kr</p>
+                                    <p className='shopping-cart__item-qty'>
+                                        <FontAwesomeIcon onClick={() => decreaseQty(cartItem)} className='fa-minus' icon={faCircleMinus} />
+                                        <span>Quantity: {cartItem.qty}</span>
+                                        <FontAwesomeIcon onClick={() => addToCart(cartItem)} className='fa-plus' icon={faCirclePlus} />
+                                        <FontAwesomeIcon onClick={() => removeItem(cartItem)} className='fa-trash' icon={faTrash} />
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <p>
-                            {cartItem.qty} x {cartItem.price.toFixed(2)}kr
-                        </p>
-                        <button onClick={() => removeItem(cartItem)} className='remove-all'>x</button>
                     </div>               
                 ))
             }
+            </div>
             {
                 cartItems.length !== 0 && (
                     <>
