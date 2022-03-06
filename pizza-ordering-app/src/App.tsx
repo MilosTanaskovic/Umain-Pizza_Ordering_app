@@ -13,12 +13,13 @@ import { MenuType, RestaurantType } from './models/restaurant';
 import agent from './api/agent';
 
 const App: React.FC = () => {
+  
   const [restaurants, setRestaurants] = useState<RestaurantType[]>([]);
   const [menu, setMenu] = useState<MenuType[]>([]);
   const [cartItems, setCartItems] = useState<MenuType[] | any>([]);
   const [orderPrice, setOrderPrice] = useState<number>(0);
-  console.log(orderPrice);
 
+  
   useEffect(() => {
     // get list of restaurants
     agent.Restaurants.list().then((response) => {
@@ -68,7 +69,7 @@ const App: React.FC = () => {
         <Route path='/menu'>
           <Menu 
             menu={menu}
-            addToCart={handleAddToCart} 
+            addToCart={handleAddToCart}
           />
         </Route>
         <Route path='/cart'>

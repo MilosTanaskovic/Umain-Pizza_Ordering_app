@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
 import './NavBar.css';
-import '../../components/Button/Button.css'
+import '../Buttons/Button.css'
 import clsx from 'clsx';
 import Logo from '../Logo/Logo';
 import { MenuType } from '../../models/restaurant';

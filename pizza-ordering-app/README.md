@@ -1,4 +1,26 @@
-# Getting Started with Create React App
+# React Pizza Store 🍕 🍕 🍕
+
+A simple front-end pizza store built using React, TypeScript and Css3. I did this project as assigment for Umain company. [View Umain Site](https://www.umain.com/).
+
+## Features ✨
+
+* In this project is implemented: TypeScript, React Router, Axios, React Fontawesome, Css3, clsx.   
+
+* **Home page** - fetching a list of restaurants with adress and position from external API(https://pizzaapp.docs.apiary.io/) using axios , and implement custom GeoLocation Hook to get latitude and longitude from current user location. Create cart component for multiple pages(Home, Menu) and styling it using pure css3(flex, grid). Create Button component for custom button. Mobile first approuch for all components. For page routing used React Router.
+* **Menu page** - fetching food menu for a given restaurant, see all ingredient.
+* **Shopping cart** - ability to see, edit and delete your order.
+* **Checkout page** - ability to see, delete your order before your purchase.
+* **Payment page** - 
+
+## Features to add/improve 🔮
+
+* Data are not currently persists to local storage. It really should be hooked up to an external database like Firebase.
+* Login via Auth0 and create customer accounts.
+* Collect payment token via Stripe elements (right now it just displays UI and doesn't have any functionality).
+* Option to order a customised pizza.
+* Filter pizzas for dietary requirements: vegan, vegetarian, dairy-free etc.
+
+## Get up and running  🚀
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

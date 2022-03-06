@@ -5,7 +5,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 import './Order.css';
 import '../main.css';
-import Button from '../../components/Button/Button';
+import Button from '../../components/Buttons/Button';
 import { useHistory } from 'react-router';
 
 interface Props {

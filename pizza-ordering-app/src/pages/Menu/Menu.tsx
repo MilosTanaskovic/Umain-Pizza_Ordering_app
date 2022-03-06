@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { MenuType } from '../../models/restaurant';
 import Cart from '../../components/Cart/Cart';
 import './Menu.css';
@@ -12,7 +12,7 @@ interface Props {
 const Menu: React.FC<Props> = ({menu, addToCart}) => {
     return (
         <main className='main'>
-            <h1 className='main__title'>Pizzas Selection</h1>
+            <h1 className='main__title'>Menu Selection</h1>
             <div className='main__grid'>
             {
                 menu?.map((item) => (

@@ -6,9 +6,9 @@ import { faCirclePlus, faCircleMinus, faTrash } from '@fortawesome/free-solid-sv
 
 import './ShoppingCart.css';
 import '../main.css';
-import '../../components/Button/Button.css';
+import '../../components/Buttons/Button.css';
 import clsx from 'clsx';
-import Button from '../../components/Button/Button';
+import Button from '../../components/Buttons/Button';
 
 interface Props {
     addToCart: (menuItem: MenuType) => void;
