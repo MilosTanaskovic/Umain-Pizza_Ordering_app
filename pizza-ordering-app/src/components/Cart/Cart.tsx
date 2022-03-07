@@ -31,7 +31,7 @@ const Restaurant: React.FC<Props> = ({restaurant, item, addToCart, location})  =
                 item && (
                     <>
                         <div className='card__box'>
-                            <img className='card__img' src={`/assets/menu/${item.name}.jpeg`} alt={item.name} />
+                            <img className='card__img' src={`/assets/menu/${item.id}.jpeg`} alt={item.name} />
                             <p className='card__box-category'>{item.category}</p>
                             <span className='card__box-rank'>{item.rank}</span>
                         </div>
