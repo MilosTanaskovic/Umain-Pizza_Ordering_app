@@ -13,7 +13,7 @@ interface Props {
     removeItem: (menuItem: MenuType) => void;
 }
 
-const Order: React.FC<Props> = ({cartItems, removeItem}: Props) => {
+const Order: React.FC<Props> = ({cartItems, removeItem}) => {
     let history = useHistory();
     return (
         <main className='main order'>

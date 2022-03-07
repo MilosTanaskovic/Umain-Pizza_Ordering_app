@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 // import components and pages
 import NavBar from './components/NavBar/NavBar';
-import Checkout from './pages/Checkout/Checkout';
 import Home from './pages/Home/Home';
 import Order from './pages/Order/Order';
 import Menu from './pages/Menu/Menu';
@@ -81,9 +80,6 @@ const App: React.FC = () => {
             orderPrice={orderPrice}
             removeItem={handleRemoveItem}
           />
-        </Route>
-        <Route path='/checkout'>
-          <Checkout />
         </Route>
         <Route path='/order'>
           <Order 

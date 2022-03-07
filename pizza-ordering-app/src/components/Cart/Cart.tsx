@@ -1,16 +1,18 @@
 import React from 'react'
 import { useHistory } from 'react-router';
+import { GeoLocationType } from '../../models/geoLocation';
 import { MenuType, RestaurantType } from '../../models/restaurant';
 import Button from '../Buttons/Button';
 import './Cart.css';
 
 interface Props {
-    restaurant?: RestaurantType;
+    restaurant?: RestaurantType | any;
     item?: MenuType;
     addToCart: (menuItem: MenuType) => void;
+    location?: GeoLocationType | any;
 }
 
-const Restaurant: React.FC<Props> = ({restaurant, item, addToCart})  => {
+const Restaurant: React.FC<Props> = ({restaurant, item, addToCart, location})  => {
     let history = useHistory();
     return (
         <div className='card'>
@@ -22,8 +24,8 @@ const Restaurant: React.FC<Props> = ({restaurant, item, addToCart})  => {
                         <p className='card__address'>{restaurant.address1}</p>
                         <p>{restaurant.address2}</p>
                         <Button onClick={() => history.push('/menu')}>View Menu</Button>
-                    </>
-                )
+                     </>   
+                )  
             }
             {
                 item && (

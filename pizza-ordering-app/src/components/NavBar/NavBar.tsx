@@ -13,19 +13,12 @@ interface Props {
     orderPrice: number;
 }
 
-const NavBar: React.FC<Props> = ({ orderPrice, cartItems}: Props) => {
+const NavBar: React.FC<Props> = ({ orderPrice, cartItems}) => {
     const cartCounter = cartItems.map(item => item.qty).reduce((acc, item) => item + acc, 0);
     return (
         <header className='nav'>
             <Logo />
-           <nav className='nav__wrapper'>
-               {/* <li>
-                    <Link to='/'>Home</Link>
-               </li>
-               <li>
-                    <Link to='/cart'>Checkout</Link>
-               </li> */}
-                
+           <nav className='nav__wrapper'>        
                 <li>
                 {
                     cartCounter !== 0 && (  

@@ -18,13 +18,18 @@ const Home: React.FC<Props> = ({restaurants, addToCart}) => {
         <main className='main home'>
             {/* <h1 className='home__title'>Delicious pizzas delivered to your doorstep</h1> */}
             <div className='main__grid '>
-                {restaurants?.map(restaurant => (
-                    <Cart 
-                        key={restaurant.id}
-                        restaurant={restaurant}
-                        addToCart={addToCart}
-                    />
-                ))}
+                {restaurants?.map(restaurant => { 
+                    const {longitude, latitude} = restaurant;
+                    console.log([longitude, latitude]);
+                    return (
+                        <Cart 
+                            key={restaurant.id}
+                            restaurant={restaurant}
+                            addToCart={addToCart}
+                            location={location}
+                        />
+                    )
+                })}
             </div>
             <GeoLocation location={location} />
         </main>
