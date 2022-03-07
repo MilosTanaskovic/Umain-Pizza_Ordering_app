@@ -3,9 +3,7 @@
 A simple front-end pizza store built using React, TypeScript and Css3. I did this project as assigment for Umain company. [View Umain Site](https://www.umain.com/).
 Try the [demo]()
 
-<p align="center">
-  <img src="https://ibb.co/9ZJd17h" alt="Pizza Ordering App Preview" border="0">
-</p>
+<a href="https://ibb.co/9ZJd17h"><img src="https://i.ibb.co/41c0XH2/Screenshot-2022-03-07-at-11-53-07.png" alt="Screenshot-2022-03-07-at-11-53-07" border="0" /></a>
 
 ## Features ✨
 
