@@ -1,6 +1,11 @@
 # Pizza Ordering App 🍕 🍕 🍕
 
 A simple front-end pizza store built using React, TypeScript and Css3. I did this project as assigment for Umain company. [View Umain Site](https://www.umain.com/).
+Try the [demo]()
+
+<p align="center">
+  <img src="https://ibb.co/9ZJd17h" alt="Pizza Ordering App Preview" border="0">
+</p>
 
 ## Features ✨
 

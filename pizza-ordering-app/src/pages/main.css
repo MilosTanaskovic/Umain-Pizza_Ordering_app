@@ -135,7 +135,7 @@
 }
 
 @media only screen and (min-width: 920px) {
-    .main__grid {
+    .home > .main__grid {
         display: flex;
         flex-direction: column;     
     }
