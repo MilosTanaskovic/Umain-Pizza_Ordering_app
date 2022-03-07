@@ -13,14 +13,10 @@ interface Props {
 
 const Home: React.FC<Props> = ({restaurants, addToCart}) => {
     const location = useGeoLocation();
-    console.log(location.coordinates);
     return (
         <main className='main home'>
-            {/* <h1 className='home__title'>Delicious pizzas delivered to your doorstep</h1> */}
             <div className='main__grid '>
                 {restaurants?.map(restaurant => { 
-                    const {longitude, latitude} = restaurant;
-                    console.log([longitude, latitude]);
                     return (
                         <Cart 
                             key={restaurant.id}

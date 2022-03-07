@@ -18,9 +18,11 @@
 .button-shoppcart {
     width: fit-content;
     border-radius: 4.5px;
-    position: absolute;
-    top: 150px;
-    left: 150px
+}
+.shopping-cart__header .button-shoppcart {
+    position: relative;
+    top: 15px;
+    left: 0px;
 }
 .button-total {
     text-decoration: none;

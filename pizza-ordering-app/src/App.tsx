@@ -7,7 +7,7 @@ import Menu from './pages/Menu/Menu';
 import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
 
 import './App.css';
-import { Route, useHistory } from 'react-router';
+import { Route } from 'react-router';
 import { MenuType, RestaurantType } from './models/restaurant';
 import agent from './api/agent';
 
@@ -39,7 +39,6 @@ const App: React.FC = () => {
       setCartItems([...cartItems, { ...menuItem, qty: 1 }]);
     }
   }
-  console.log(cartItems);
   // handle remove from cart
   const handleDecreaseQty = (menuItem: MenuType) => {
     const exist = cartItems.find((x: any) => x.id === menuItem.id);
@@ -53,7 +52,6 @@ const App: React.FC = () => {
   const handleRemoveItem = (menuItem: MenuType) => {
     setCartItems(cartItems.filter((x: any) => x.id !== menuItem.id ))
   }
-  console.log(cartItems)
   return (
     <div className='App'>
       <NavBar 

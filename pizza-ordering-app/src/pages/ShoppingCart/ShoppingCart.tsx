@@ -37,9 +37,11 @@ const ShoppingCart: React.FC<Props> = ({
     
     return (
         <main className='main shopping-cart'>
-            <h1 className='main__title'>Your Cart</h1>
-            <div>{cartItems.length === 0 && <p>Your cart is empty. Add some pizzas 🍕🍕🍕 </p>}</div>
-            <Button className='button-shoppcart' onClick={() => history.push('/menu')}>Back to Menu</Button>
+            <div className='shopping-cart__header'>
+                <h1 className='main__title'>Your Cart</h1>
+                <div>{cartItems.length === 0 && <p>Your cart is empty. Add some pizzas 🍕🍕🍕 </p>}</div>
+                <Button className='button-shoppcart' onClick={() => history.push('/menu')}>Back to Menu</Button>
+            </div>
             <div className='checkout-box'>
             {
                 cartItems.map((cartItem) => ( 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { GeoLocationType } from '../../models/geoLocation';
+import './GeoLocation.css';
 
 interface Props {
     location: GeoLocationType;
@@ -7,7 +8,7 @@ interface Props {
 
 const GeoLocation = ({location}: Props) => {
     return (
-        <div>
+        <div className='geo-location'>
             {
                 location?.loaded 
                 ?   <p>{JSON.stringify(location)}</p>
