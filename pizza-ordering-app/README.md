@@ -18,9 +18,10 @@ Try the [demo](https://objective-feynman-98aa01.netlify.app/)
 
 * Data are not currently persists to any storage. It really should be hooked up to an external database like Firebase.
 * Login via Auth0 and create customer accounts.
-* Collect payment token via Stripe elements.
+* Create Payment page(UI) and collect payment token via Stripe elements.
 * Option to order a customised pizza.
 * Filter pizzas for dietary requirements: vegan, vegetarian, dairy-free etc.
+* The app is not being tests and in list of improvements is testing app using Cypress JS.
 
 ## Get up and running  🚀
 
