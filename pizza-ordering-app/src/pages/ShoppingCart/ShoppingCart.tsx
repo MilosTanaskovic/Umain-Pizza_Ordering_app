@@ -49,7 +49,7 @@ const ShoppingCart: React.FC<Props> = ({
                         <div className='checkout-box__grid'>
                             <div className='checkout-box__row'>
                                 <div className='checkout-box__row-img checkout-box__row-column'>
-                                    <img src={`/assets/menu/${cartItem.name}.jpeg`} alt={cartItem.name} />
+                                    <img src={`/assets/menu/${cartItem.id}.jpeg`} alt={cartItem.name} />
                                 </div>
                                 <div className='checkout-box__row-state checkout-box__row-column'>
                                     <p className='checkout-box__row-font'>{cartItem.name}</p>

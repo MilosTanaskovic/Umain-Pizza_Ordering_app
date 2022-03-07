@@ -28,7 +28,7 @@ const Order: React.FC<Props> = ({cartItems, removeItem}) => {
                             <div className='checkout-box__grid'>
                                 <div className='checkout-box__row'>
                                     <div className='checkout-box__row-img checkout-box__row-column'>
-                                        <img src={`/assets/menu/${orderItem.name}.jpeg`} alt={orderItem.name} />
+                                        <img src={`/assets/menu/${orderItem.id}.jpeg`} alt={orderItem.name} />
                                     </div>
                                     <div className='checkout-box__row-state checkout-box__row-column'>
                                         <p className='checkout-box__row-font'>{name}</p>
