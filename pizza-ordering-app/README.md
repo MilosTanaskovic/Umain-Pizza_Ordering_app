@@ -12,14 +12,13 @@ Try the [demo](https://stupefied-ritchie-d0684d.netlify.app/)
 * **Home page** - fetching a list of restaurants with adress and position from external API(https://pizzaapp.docs.apiary.io/) using axios , and implement custom GeoLocation Hook to get latitude and longitude from current user location. Create cart component for multiple pages(Home, Menu) and styling it using pure css3(flex, grid). Create Button component for custom button. Mobile first approuch for all components. For page routing used React Router.
 * **Menu page** - fetching food menu for a given restaurant, see all ingredient. 
 * **Shopping cart** - ability to see, edit and delete your order. Go back to the Menu Page and continue browsing;
-* **Checkout page** - ability to see, delete your order before your purchase. Go back to the Menu Page and continue browsing;
-* **Payment page** - 
+* **Checkout page** - ability to see, delete your order before your purchase. Go back to the Menu Page and continue browsing; 
 
 ## Features to add/improve 🔮
 
 * Data are not currently persists to any storage. It really should be hooked up to an external database like Firebase.
 * Login via Auth0 and create customer accounts.
-* Collect payment token via Stripe elements (right now it just displays UI and doesn't have any functionality).
+* Collect payment token via Stripe elements.
 * Option to order a customised pizza.
 * Filter pizzas for dietary requirements: vegan, vegetarian, dairy-free etc.
 
@@ -63,7 +62,6 @@ src ->
                     - Menu
                     - ShoppingCart
                     - Order
-                    - Payment
     hooks ->    
                     - useGeoLocation
     models ->
