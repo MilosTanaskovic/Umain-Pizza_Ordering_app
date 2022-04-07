@@ -5,6 +5,7 @@ export interface RestaurantType {
     address2: string;
     latitude: number;
     longitude: number;
+    distance: number;
 }
 
 export interface MenuType {

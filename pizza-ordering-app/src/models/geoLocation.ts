@@ -1,5 +1,5 @@
 export interface GeoLocationType {
     loaded?: boolean;
-    coordinates: { lat: string; lng: string; };
+    coordinates: { lat: number; lng: number; };
     error?: any;
 }

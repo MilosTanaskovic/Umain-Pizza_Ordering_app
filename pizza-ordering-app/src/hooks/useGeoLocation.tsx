@@ -6,7 +6,7 @@ import { GeoLocationType } from '../models/geoLocation';
 const useGeoLocation = () => {
     const [location, setLocation] = useState<GeoLocationType>({
         loaded: false,
-        coordinates: {lat: '', lng: ''},
+        coordinates: {lat: 0, lng: 0},
     });
 
     const onSuccess = (location: any) => {
