@@ -21,8 +21,13 @@ const NavBar: React.FC<Props> = ({ orderPrice, cartItems}) => {
            <nav className='nav__wrapper'>        
                 <li>
                 {
-                    cartCounter !== 0 && (  
-                    <Link className={clsx('button', 'button-checkout')} to='/cart'>Your Cart</Link>
+                    cartCounter !== 0 && ( 
+                        <Link 
+                            className={clsx('button', 'button-checkout')} 
+                            to='/cart'
+                        >
+                            <span className='btn-dark'>Your Cart</span>    
+                        </Link>
                     )
                 }
                 </li>

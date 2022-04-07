@@ -10,19 +10,20 @@ interface Props {
 }
 
 const Menu: React.FC<Props> = ({menu, addToCart}) => {
+    console.log(menu)
     return (
         <main className='main'>
             <h1 className='main__title'>Menu Selection</h1>
             <div className='main__grid'>
-            {
-                menu?.map((item) => (
-                    <Cart 
-                        key={item.id} 
-                        item={item}
-                        addToCart={addToCart}
-                    />
-                ))
-            }
+            {menu?.sort((a:MenuType, b: MenuType) => {
+                return a.rank - b.rank;
+            }).map((item) => (
+                <Cart 
+                    key={item.id} 
+                    item={item}
+                    addToCart={addToCart}
+                />
+            ))}
             </div>
         </main>
     )

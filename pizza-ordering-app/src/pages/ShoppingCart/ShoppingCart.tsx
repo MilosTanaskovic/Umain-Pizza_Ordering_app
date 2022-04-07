@@ -40,7 +40,12 @@ const ShoppingCart: React.FC<Props> = ({
             <div className='shopping-cart__header'>
                 <h1 className='main__title'>Your Cart</h1>
                 <div>{cartItems.length === 0 && <p>Your cart is empty. Add some pizzas 🍕🍕🍕 </p>}</div>
-                <Button className='button-shoppcart' onClick={() => history.push('/menu')}>Back to Menu</Button>
+                <Button 
+                    className='button button-shoppcart' 
+                    onClick={() => history.push('/menu')}
+                >
+                        <span className='btn-dark btn-back'>Back to Menu</span>
+                </Button>
             </div>
             <div className='checkout-box'>
             {
@@ -73,7 +78,13 @@ const ShoppingCart: React.FC<Props> = ({
                         <p>Order: <strong>{orderPrice.toFixed(2)}kr</strong></p>
                         <p>Delivery(free over 200kr.): <strong>{deliveryPrice.toFixed(2)}kr</strong></p>
                         <p>Total: <strong>{totalPrice.toFixed(2)}kr</strong></p>
-                        <Link className={clsx('button', 'button-total')} to='/order'>Checkout</Link>
+                        <Link 
+                            className={clsx('button', 'button-total')} 
+                            to='/order'
+                            style={{backgroundColor: '#333'}}
+                        >
+                             <span className='btn-dark'>Checkout</span> 
+                        </Link>
                     </div>
                 )
             }

@@ -14,6 +14,7 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 16px;
     height: 100%;
+    padding: 50px 0px 50px;
 }
 /* chopping cart and order page => checkout */
 .checkout-box {
@@ -138,5 +139,10 @@
     .home > .main__grid {
         display: flex;
         flex-direction: column;     
+    }
+}
+@media only screen and (min-width: 615px) and (max-width: 915px){
+    .home > .main__grid {
+        padding: 0px;
     }
 }

@@ -9,3 +9,86 @@
     font-size: 18px;
     font-weight: bold;
 }
+
+/*
+    button -> disabled
+*/
+/* btn cart */
+.btn-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* 
+    button -> restaurant | menu 
+*/
+/* btn restaurant & btn cart */
+.button .btn-dark {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+  
+.button .btn-dark:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+  
+.button:hover .btn-dark {
+    padding-right: 25px;
+}
+  
+.button:hover .btn-dark:after {
+    opacity: 1;
+    right: 0;
+}
+/* btn back */
+.button .btn-back:after {
+    content: '\00AB' !important;
+    left: -20px !important;
+    right: inherit;
+}
+  
+.button:hover .btn-back {
+    padding-left: 25px !important;
+    padding-right: inherit;
+}
+  
+.button:hover .btn-back:after {
+    left: 0 !important;
+    right: inherit;
+}
+/* btn menu */
+.button .btn-green {
+    display: inline-block;
+    padding: 7px 20px;
+    outline: none;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 9px #999;
+}
+  
+.button .btn-green:hover {
+    background-color: #3e8e41
+}
+  
+.button .btn-green:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/*
+ button Total
+*/
+.button-total {
+    text-decoration: none;
+    border-radius: 4.5px;
+}

@@ -50,8 +50,7 @@ const Home: React.FC<Props> = ({restaurants, addToCart}) => {
                         addToCart={addToCart}
                         loaded={loaded}
                     />                  
-                ))
-                }
+                ))}
             </div>
             <GeoLocation location={location} />
         </main>

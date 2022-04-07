@@ -5,6 +5,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 import './Order.css';
 import '../main.css';
+import '../../components/Buttons/Button.css';
 import Button from '../../components/Buttons/Button';
 import { useHistory } from 'react-router';
 
@@ -45,8 +46,12 @@ const Order: React.FC<Props> = ({cartItems, removeItem}) => {
             }
             {
                 cartItems.length !== 0 
-                    ? <Button className='button-order' >Go to Payment</Button>
-                    : <Button className='button-order' onClick={() =>  history.push('/menu')} >Back to Menu</Button>
+                    ?   <Button className='button button-order' >
+                            <span className='btn-dark'>Go to Payment</span>
+                        </Button>
+                    :   <Button className='button-order' onClick={() =>  history.push('/menu')} >
+                            <span className='btn-dark btn-back'>Back to Menu</span>
+                        </Button>
             }
             </div>
         </main>
