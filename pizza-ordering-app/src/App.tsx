@@ -11,11 +11,12 @@ import { Route } from 'react-router';
 import { MenuType, RestaurantType } from './models/restaurant';
 import agent from './api/agent';
 
+const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || "[]");
+
 const App: React.FC = () => {
-  
   const [restaurants, setRestaurants] = useState<RestaurantType[]>([]);
   const [menu, setMenu] = useState<MenuType[]>([]);
-  const [cartItems, setCartItems] = useState<MenuType[] | any>([]);
+  const [cartItems, setCartItems] = useState<MenuType[] | any>(cartFromLocalStorage);
   const [orderPrice, setOrderPrice] = useState<number>(0);
 
   
@@ -29,6 +30,11 @@ const App: React.FC = () => {
       setMenu(response);
     })
   }, []);
+
+  // store data in local storage
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+  }, [cartItems])
   
   // handle add to cart
   const handleAddToCart  = (menuItem: MenuType) => {
@@ -52,6 +58,7 @@ const App: React.FC = () => {
   const handleRemoveItem = (menuItem: MenuType) => {
     setCartItems(cartItems.filter((x: any) => x.id !== menuItem.id ))
   }
+  console.log(cartItems);
   return (
     <div className='App'>
       <NavBar 
